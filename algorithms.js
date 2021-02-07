@@ -879,13 +879,8 @@ function readability(str){
 			if(letters[k] === ""  || letters[k] === " / " || letters[k] === " . " || letters[k] === " ! "){	
 				numberOfLetters --
 		  }
-		 
 		}
-
-	
-	
              return [numberOfLetters, words.length, sentence]
-	
 }
 
 //console.log(readability("Congratulations! Today is your day. You're off to Great Places! You're off and away!"))
@@ -895,19 +890,11 @@ const singleNumber = (arr) => {
 	let result = 0;
 	for(let i = 0; i< arr.length; i++){
 	   result ^= arr[i]
-	   
 	}
-	
 	return result;	
 }
 //console.log(singleNumber([4,1,2,1,2,4,10,8,6,6,8,12,12]));
 
-
-
-function radixSort(arr){
-   
-
-   }
 
 //console.log(radixSort([25,67,101,250,12]));
 
