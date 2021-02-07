@@ -109,30 +109,6 @@ const l = myArrayyy.filter(what => {
  
  //console.log(l.length)
 
-function what() {
-  let phone = "916-555-5987";
-
-   let nex = phone.split('');
-
-   nex.splice(3, 1);
-   nex.splice(6, 1)
-   let nexNum = nex.join('');
-
-
-// console.log(nexNum);
-
-}
-  
- // what();
-
-
-
-let myFish = ['angel', 'clown', 'drum', 'sturgeon']
-let removed = myFish.splice(3, 1)
-
-//console.log(myFish);
-
- ////////////////////////////
 
 // write a function which takes in a string and returns counts of ea character in the string 
 function charCount(str){
@@ -255,7 +231,6 @@ function uniqueValues(arr){
    let i = 0;
    let j =  i + 1;
    while(j < arr.length -1 ){
-   	
    	if( arr[i] === arr[j]){
         same ++ ;
         j ++ 
@@ -266,7 +241,6 @@ function uniqueValues(arr){
    	 
    }
    return same;
-    
   }
 
   // console.log(uniqueValues([1,1,1,2,2,5,15,15,15,20, 25, 25, 30]));
