@@ -639,7 +639,7 @@ function reverseWordsInString(string) {
 
 //console.log(reverseWordsInString('testing abc 123'));
 
-function testingGit(){
+function testingGit(arr){
     return 0;
 }
 
