@@ -649,6 +649,7 @@ function plusOne(digits){
             digits[i] = 0;
         }
     }
+    // if arr length = 0 for loop does not run, add 1 to the arr & return
     digits.unshift(1);
     return digits;
 }
