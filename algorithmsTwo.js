@@ -636,7 +636,6 @@ function reverseWordsInString(string) {
         }
     }
 }
-
 //console.log(reverseWordsInString('testing abc 123'));
 
 
@@ -653,6 +652,26 @@ function plusOne(digits){
     digits.unshift(1);
     return digits;
 }
-console.log(plusOne([6,9,2,9]));
+//console.log(plusOne([6,9,2,9]));
 
 
+
+function tournamentWinner(competitions, results) {
+    const team = {};
+
+    for(let i = 0;  i<results.length; i++){
+    if(team.hasOwnProperty(competitions[i][1]) && results[i] === 0){
+        team[competitions[i][1]] +=3;
+    }else if(results[i] === 0){
+        team[competitions[i][1]] = 3;
+    }
+
+    if(team.hasOwnProperty(competitions[i][0]) && results[i] === 1){
+        team[competitions[i][0]] +=3;
+    }else if(results[i] === 1){
+        team[competitions[i][0]] = 3;
+    }
+  }
+    return Object.keys(team).reduce((a, b) => team[a] > team[b] ? a : b);
+}
+//console.log(tournamentWinner(testcompetitions, testResults));
