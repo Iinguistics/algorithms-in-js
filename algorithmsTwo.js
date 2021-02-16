@@ -675,3 +675,13 @@ function tournamentWinner(competitions, results) {
     return Object.keys(team).reduce((a, b) => team[a] > team[b] ? a : b);
 }
 //console.log(tournamentWinner(testcompetitions, testResults));
+
+const testObj = {
+    5:true,
+    10:true,
+    2:true
+};
+
+const testArr = [];
+
+console.log(Object.keys(testObj).reduce((a, b) => testObj[a] >= testObj[b] ? testArr.push(a) : testArr.push(b)));
