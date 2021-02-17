@@ -676,12 +676,37 @@ function tournamentWinner(competitions, results) {
 }
 //console.log(tournamentWinner(testcompetitions, testResults));
 
-const testObj = {
-    5:true,
-    10:true,
-    2:true
-};
 
-const testArr = [];
+function greatestNumberofCandies(candies, extraCandies){
+    const results = [];
+    for(let i = 0; i<candies.length; i++){
+        let left = 0;
+        let notGreatest = false;
+        while(left < candies.length){
+            if(candies[i] + extraCandies >= candies[left]){
+                left ++;
+            }else{
+                notGreatest = true;
+                left ++;
+            }
+        }
+        if(notGreatest === false){
+            results.push(true)
+        }else{
+            results.push(false);
+        }
+    }
+    return results;
+}
+//console.log(greatestNumberofCandies([1,3,9], 4));
 
-console.log(Object.keys(testObj).reduce((a, b) => testObj[a] >= testObj[b] ? testArr.push(a) : testArr.push(b)));
+// another way of solving it
+function greatestNumberofCandiess(candies, extraCandies){
+    const results =[];
+    const max = Math.max(...candies);
+    for(const candie of candies){
+    results.push((candie+extraCandies) >= max);
+    }
+    return results;
+}
+//console.log(greatestNumberofCandiess([2,3,5,1,3], 3));
