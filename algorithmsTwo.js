@@ -724,3 +724,14 @@ function shuffle(nums, n){
 }
 //console.log(shuffle([1,2,3,4,4,3,2,1], 4));
 
+
+function maxWealth(accounts){
+    const output = [];
+    for(let i = 0; i<accounts.length; i++){
+      output.push(accounts[i].reduce((a,b)=>{
+       return a + b;
+      }));
+    }
+   return Math.max(...output);
+}
+//console.log(maxWealth([[1,2,3],[3,2,1]]));
