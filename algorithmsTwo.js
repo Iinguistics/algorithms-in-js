@@ -713,3 +713,14 @@ function greatestNumberofCandiess(candies, extraCandies){
 
 
 
+//Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn]. Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+function shuffle(nums, n){
+    const output = [];
+    for(let x = 0; x<nums.length / 2; x++){
+        let y = n + x;
+        output.push(nums[x], nums[y])
+    }
+    return output;
+}
+//console.log(shuffle([1,2,3,4,4,3,2,1], 4));
+
