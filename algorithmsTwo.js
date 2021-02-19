@@ -735,3 +735,22 @@ function maxWealth(accounts){
    return Math.max(...output);
 }
 //console.log(maxWealth([[1,2,3],[3,2,1]]));
+
+
+
+function numIdenticalPairs(nums){
+   let output = 0;
+   for(let i = 0; i<nums.length; i++){
+       let fastRunner = i + 1;
+       while(fastRunner < nums.length){
+           if(nums[i] === nums[fastRunner]){
+               output ++;
+               fastRunner ++;
+           }else{
+               fastRunner ++;
+           }
+       }
+   }
+   return output;
+}
+//console.log(numIdenticalPairs([1,2,3,1,1,3]));
