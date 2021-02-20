@@ -754,3 +754,18 @@ function numIdenticalPairs(nums){
    return output;
 }
 //console.log(numIdenticalPairs([1,2,3,1,1,3]));
+
+
+
+// running sum of 1d array
+function runningSum(nums){
+   const output = [];
+   let running = nums[0] + nums[1];
+   output.push(nums[0], running);
+   for(let i = 2; i<nums.length; i++){
+    output.push(running + nums[i]);
+    running += nums[i];
+   }
+   return output;
+}
+//console.log(runningSum([3,1,2,10,1]));
