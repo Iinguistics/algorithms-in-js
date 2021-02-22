@@ -769,3 +769,24 @@ function runningSum(nums){
    return output;
 }
 //console.log(runningSum([3,1,2,10,1]));
+
+
+
+function smallerNumbersThanCurrent(nums){
+  const output = [];
+  for(let i = 0; i<nums.length; i++){
+      let counter = 0;
+      let runner = 0;
+      while(runner < nums.length){
+          if(nums[runner] < nums[i]){
+              counter ++;
+              runner ++;
+          }else{
+              runner ++;
+          }
+      }
+      output.push(counter);
+  }
+   return output;
+}
+//console.log(smallerNumbersThanCurrent([8,1,2,2,3]));
