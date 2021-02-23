@@ -793,8 +793,17 @@ function smallerNumbersThanCurrent(nums){
 
 
 
+//ea adjacent pair of elements [freq, val] = [nums[2*i], nums[2*i+1]]
 function decompressRLElist(nums){
-    
-
+  const output = [];
+  for(let left = 0; left<nums.length; left+=2){
+      let right = left + 1;
+      let counter = 0;
+      while(counter < nums[left]){
+          output.push(nums[right]);
+          counter ++;
+      }
+  }
+  return output;
 }
-console.log(decompressRLElist([1,2,3,4]));
+//console.log(decompressRLElist([1,1,2,3]));
