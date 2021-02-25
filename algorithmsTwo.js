@@ -807,3 +807,29 @@ function decompressRLElist(nums){
   return output;
 }
 //console.log(decompressRLElist([1,1,2,3]));
+
+
+// in progress...would need to a while loop & swap / temp var if output[ind] already exists 
+// function createTargetArray(nums, index){
+//     const output = [];
+//     for(let i = 0; i<index.length; i++){
+//        if(output[index[i]]){
+//            output[index[i] + 1] = nums[i];
+//        }else{
+//            output[index[i]] = nums[i];
+//        }
+//    }
+//     return output;
+// }
+
+
+function createTargetArray(nums, index){
+    let target = [];
+    
+    index.forEach((v,i) => {
+      target.splice(v, 0, nums[i]);
+    });
+    return target;
+  }
+
+  //console.log(createTargetArray([0,1,2,3,4], [0,1,2,2,1]));
