@@ -839,14 +839,14 @@ function createTargetArray(nums, index){
   function largestAltitude(gain){
       const altitides = [0, gain[0]];
       let runningAlt;
-      for(let i = 0; i<gain.length - 1; i++){
-          runningAlt = gain[i] + gain[i + 1];
+      for(let i = 1; i<gain.length ; i++){
+          const end = altitides.length - 1;
+          runningAlt = altitides[end] + gain[i];
           altitides.push(runningAlt);
       }
        altitides.sort((a,b)=>{
            return a - b;
        });
-       const end = altitides.length - 1;
-       return altitides[end];
+       return altitides[altitides.length-1];
   }
-  console.log(largestAltitude([-5,1,5,0,-7]));
+  //console.log(largestAltitude([-5,1,5,0,-7]));
