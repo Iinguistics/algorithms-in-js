@@ -839,7 +839,7 @@ function createTargetArray(nums, index){
   function largestAltitude(gain){
       const altitides = [0, gain[0]];
       let runningAlt;
-      for(let i = 1; i<gain.length ; i++){
+      for(let i = 1; i<gain.length; i++){
           const end = altitides.length - 1;
           runningAlt = altitides[end] + gain[i];
           altitides.push(runningAlt);
@@ -850,3 +850,7 @@ function createTargetArray(nums, index){
        return altitides[altitides.length-1];
   }
   //console.log(largestAltitude([-5,1,5,0,-7]));
+
+
+  
+  
