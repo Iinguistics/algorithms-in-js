@@ -890,5 +890,31 @@ function countMatches(items, ruleKey, ruleValue){
     }
     return output;
 }
-console.log(countMatches([["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], 
-"type", "phone"));
+//console.log(countMatches([["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], 
+//"type", "phone"));
+
+
+
+
+function defangIPaddr(address){
+    let output = [...address]
+    for(let i=0; i<address.length; i++){
+        if(address[i] === "."){
+            output[i] = "[.]"
+        }
+    }
+     return output.join("");
+}
+//console.log(defangIPaddr("255.100.50.0"));
+
+// another way of doing it
+// function defangIPaddr(address){
+//     let defangAdd = address.split("");
+//     for(let i=0; i<defangAdd.length; i++){
+//         if(defangAdd[i] === "."){
+//             defangAdd[i] = "[.]"
+//         }
+//     }
+//      return defangAdd.join("");
+// }
+
