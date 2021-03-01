@@ -877,3 +877,18 @@ function countGoodTriplets(arr, a, b, c){
 
 
 
+function countMatches(items, ruleKey, ruleValue){
+    let output = 0;
+    for(let i = 0; i<items.length; i++){
+        if(ruleKey === "type" && items[i][0] === ruleValue){
+            output +=1;
+        }else if(ruleKey === "color" && items[i][1] === ruleValue){
+            output +=1;
+        }else if(ruleKey === "name" && items[i][2] === ruleValue){
+            output +=1;
+        }
+    }
+    return output;
+}
+console.log(countMatches([["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], 
+"type", "phone"));
