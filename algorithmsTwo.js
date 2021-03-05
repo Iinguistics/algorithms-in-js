@@ -948,3 +948,20 @@ function findNumbers(nums){
 
 
 
+function maxStockProfit(prices){
+    let maxProfit = 0;
+    for(let i = 0; i < prices.length - 1; i++){
+        let right = i + 1;
+        while(right < prices.length){
+            let currentProfit = prices[right] - prices[i];
+            if(currentProfit > maxProfit){
+                maxProfit = currentProfit;
+                right ++;
+            }else{
+                right ++;
+            }
+        }
+    }
+     return maxProfit;
+}
+//console.log(maxStockProfit([5,11,8,5,7,10]));
