@@ -932,11 +932,19 @@ function minTimeToVisitAllPoints(points){
 
 
 function findNumbers(nums){
-    
+    let even = 0;
     for(let i=0; i<nums.length; i++){
-       
-        
+       if(nums[i] >= 10 && nums[i] < 100){
+           even ++;
+       }else if(nums[i] > 999 && nums[i] < 10000){
+        even ++;
+      }else if(nums[i] >= 100000 && nums[i] < 1000000){
+        even ++;
+      }
     }
-
+     return even;
 }
-console.log(findNumbers([12,345,2,6,7896]));
+//console.log(findNumbers([12,345,2,6,7896]));
+
+
+
