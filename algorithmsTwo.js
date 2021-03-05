@@ -928,3 +928,15 @@ function minTimeToVisitAllPoints(points){
     return result;
 }
 //console.log(minTimeToVisitAllPoints([[1,1],[3,4],[-1,0]]));
+
+
+
+function findNumbers(nums){
+    
+    for(let i=0; i<nums.length; i++){
+       
+        
+    }
+
+}
+console.log(findNumbers([12,345,2,6,7896]));
