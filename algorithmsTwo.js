@@ -965,3 +965,16 @@ function maxStockProfit(prices){
      return maxProfit;
 }
 //console.log(maxStockProfit([5,11,8,5,7,10]));
+
+
+
+function sumOfUnique(nums){
+    let sum = 0, filtered = nums.filter((val, index) => nums.indexOf(val) !== index);
+    for (let i = 0; i < nums.length; i++) {
+        if (!(filtered.includes(nums[i]))) {
+             sum += parseInt(nums[i]);
+         }
+    };
+    return sum;
+}
+//console.log(sumOfUnique([2,3,2,5]));
