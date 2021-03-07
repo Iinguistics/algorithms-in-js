@@ -978,3 +978,16 @@ function sumOfUnique(nums){
     return sum;
 }
 //console.log(sumOfUnique([2,3,2,5]));
+
+
+// Problem asked by apple
+// A fixed point in an array is an element whose value is equal to its index.
+function fixedPoint(nums){
+    for(let i = 0; i<nums.length; i++){
+        if(nums[i] === i){
+            return i;
+        }
+    }
+     return false;
+}
+console.log(fixedPoint([-6,0,2,40]));
