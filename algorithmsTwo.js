@@ -990,4 +990,26 @@ function fixedPoint(nums){
     }
      return false;
 }
-console.log(fixedPoint([-6,0,2,40]));
+//console.log(fixedPoint([-6,0,2,40]));
+
+
+
+function finalPrices(prices){
+    const output = [];
+    for(let i = 0; i < prices.length; i++){
+        let j = i + 1;
+        while(j < prices.length){
+            if(prices[j] <= prices[i]){
+                output.push(prices[i] - prices[j]);
+                break;
+            }else{
+                j ++
+            }
+        }
+        if(j === prices.length){
+            output.push(prices[i]);
+        }
+    }
+      return output;
+}
+//console.log(finalPrices([8,4,6,2,3]));
