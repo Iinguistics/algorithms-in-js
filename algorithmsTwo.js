@@ -581,6 +581,7 @@ function sortedSquares(nums){
 //console.log(sortedSquares([-7,-3,2,3,11]));
 
 
+
 // using memoization  space O(n)  time O(n)
 function firstDuplicateValue(array){
     const nums = {};
@@ -1013,3 +1014,6 @@ function finalPrices(prices){
       return output;
 }
 //console.log(finalPrices([8,4,6,2,3]));
+
+
+
