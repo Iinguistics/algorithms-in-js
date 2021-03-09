@@ -1017,3 +1017,17 @@ function finalPrices(prices){
 
 
 
+function sortArrayByParity(A){
+    const even = [];
+    const odd = [];
+    for(let i = 0; i<A.length; i++){
+        if(A[i] % 2 === 0){
+            even.push(A[i]);
+        }else{
+            odd.push(A[i]);
+        }
+    }
+    const output = [...even, ...odd];
+    return output
+}
+//console.log(sortArrayByParity([3,1,2,4]));
