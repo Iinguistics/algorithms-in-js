@@ -1044,3 +1044,34 @@ function busyStudent(startTime, endTime, queryTime){
       return output;
 }
 //console.log(busyStudent([9,8,7,6,5,4,3,2,1], [10,10,10,10,10,10,10,10,10], 5));
+
+
+
+function numJewelsInStones(jewels, stones){
+    let output = 0;
+    for(let i = 0; i<jewels.length; i++){
+        let j = 0;
+        while(j < stones.length){
+            if(jewels[i] === stones[j]){
+                output ++;
+                j++
+            }else{
+                j++;
+            }
+        }
+    }
+      return output;
+}
+//console.log(numJewelsInStones("aA", "aAAbbb"));
+// another way of doing it...faster runtime
+function numJewelsInStones(jewels, stones){
+    let output = 0;
+    for(let i = 0; i<stones.length; i++){
+        let n = jewels.includes(stones[i]);
+        if(n){
+            output ++;
+        }
+    }
+      return output;
+}
+//console.log(numJewelsInStones("aA", "aAAbbb"));
