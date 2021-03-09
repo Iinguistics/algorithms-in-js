@@ -1031,3 +1031,16 @@ function sortArrayByParity(A){
     return output
 }
 //console.log(sortArrayByParity([3,1,2,4]));
+
+
+
+function busyStudent(startTime, endTime, queryTime){
+    let output = 0;
+    for(let i = 0; i<startTime.length; i++){
+        if(startTime[i] <= queryTime && endTime[i] >= queryTime){
+            output ++;
+        }
+    }
+      return output;
+}
+//console.log(busyStudent([9,8,7,6,5,4,3,2,1], [10,10,10,10,10,10,10,10,10], 5));
