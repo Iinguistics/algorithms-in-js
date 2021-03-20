@@ -1128,3 +1128,10 @@ function replaceElements(arr){
 }
 //console.log(replaceElements([17,18,5,4,6,1]));
 
+
+
+function sumZero(n){
+
+}
+console.log(sumZero(5));
+
