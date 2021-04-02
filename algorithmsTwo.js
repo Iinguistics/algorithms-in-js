@@ -1129,9 +1129,49 @@ function replaceElements(arr){
 //console.log(replaceElements([17,18,5,4,6,1]));
 
 
+// return the min of change you Cannot create
+// O(nlogn) Time  O(1) space
+function nonConstructibleChange(coins) {
+    coins.sort((a,b)=>{
+        return a - b;
+    });
 
-function sumZero(n){
+    let change = 0;
 
-}
-console.log(sumZero(5));
+    for(let i = 0; i<coins.length; i++){
+        if(coins[i] > change + 1){
+            return change + 1;
+        }else{
+            change += coins[i];
+        }
+      }  
+      return change + 1;  
+    }
+    
+//console.log(nonConstructibleChange([5,7,1,1,2,3,22]));
+// [1,1,2,3,5,7,22] returns 20
+// [1,1,1,1,1] returns 6
 
+
+
+// function sumZero(n){
+
+// }
+// console.log(sumZero(5));
+
+
+
+// function arrayPairSum(nums){
+
+
+
+// }
+//console.log(arrayPairSum(1,4,3,2));
+
+
+
+// function frequencySort(nums){
+    
+
+// }
+// console.log(frequencySort([1,1,2,2,2,3]));
