@@ -1179,3 +1179,102 @@ function mergeOverlappingIntervals(intervals){
 
 
 
+function sockMerchant(n, ar){
+    ar.sort((a,b)=> a - b);
+    let pairs = 0;
+    for(let i = 0; i < n - 1 ; i++){
+        if(ar[i] === ar[i + 1]){
+            pairs ++;
+            i += 1
+        }
+    }
+    return pairs;
+}
+//console.log(sockMerchant(20, [4, 5, 5, 5, 6, 6, 4, 1, 4, 4, 3, 6, 6, 3, 6, 1, 4, 5, 5, 5]));
+
+
+function countingValleys(steps, path) {
+    let valleys = 0;
+    let level = 0;
+    for(let i = 0; i < steps; i++){
+        if(path[i] === "D"){
+            level -= 1;
+        }else{
+            level += 1;
+        }
+        if(level === 0 && path[i] === "U"){
+            valleys ++;
+        }
+    }
+      return valleys;
+}
+//console.log(countingValleys(10, "UDUUUDUDDD"));
+
+
+// Space O(1)  Time O(n)
+function jumpingOnClouds(c){
+    let numberOfJumps = 0;
+    let i = 0;
+
+    while(i < c.length - 1){
+        if(c[i + 2] === 0){
+        i += 2;
+        numberOfJumps ++;
+        }else{
+            i += 1;
+            numberOfJumps ++;
+        }
+    }
+    return numberOfJumps;
+}
+//console.log(jumpingOnClouds([0,0,1,0,0,1,0]));
+
+
+
+// function repeatedString(s, n) {
+//     let totalA = 0;
+//     const aIdx = {};
+//     const whole = Math.floor(n / s.length);
+//     const remainder = n % s.length;
+//     for(let i = 0; i < s.length; i++){
+//         if(s[i] === "a"){
+//             totalA ++;
+//             aIdx[i] = true;
+//         }
+//     }
+//     totalA = totalA * whole;
+//     let i = 0;
+//     while(i < remainder){
+//         if(i in aIdx){
+//             totalA ++;
+//             i ++;
+//         }else{
+//             i ++;
+//         }
+//     }
+//     return totalA;
+// }
+
+// another approach
+function repeatedString(s, n) {
+    let totalA = 0;
+    
+    if(n >= s.length){
+        let occurencesOfA = [...s].filter(e => e === "a").length;
+        totalA = Math.floor(n / s.length) * occurencesOfA;
+    }
+
+    let tailStringLength = n % s.length;
+
+    for(let i = 0; i < tailStringLength; i++){
+        if(s[i] === 'a'){
+            totalA ++;
+        }
+    }
+    return totalA;
+}
+//console.log(repeatedString("aba", 10));
+
+
+
+
