@@ -1278,3 +1278,42 @@ function repeatedString(s, n) {
 
 
 
+// 2 d array 
+// constraints -9 < arr[i][j] <9   all the numbers will be greater than -9 & less than 9
+// so we make the max sum = -63..-9 * 7(the number of values being summed at a time..top 3 mid 1 bottom 3)
+function hourglassSum(arr){
+    let max = -63
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
+            let sum = 0
+            sum = (arr[i][j] + arr[i][j + 1] + arr[i][j + 2] + 
+                   arr[i + 1][j + 1] + 
+                   arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2])
+            max = max < sum ? sum : max
+        }
+    }
+    return max
+}
+//console.log(hourglassSum([[1,1,1,0,0,0], [0,1,0,0,0,0], [1,1,1,0,0,0], [0,0,2,4,4,0], [0,0,0,2,0,0], [0,0,1,2,4,0]]));
+
+
+
+function rotLeft(a, d){
+    const output = [];
+    for(let i = d; i < a.length; i++){
+        output.push(a[i]);
+    }
+     let i = 0;
+     while(i < d){
+         output.push(a[i] );
+         i ++;
+     }
+    return output;
+}
+//console.log(rotLeft([1,2,3,4,5], 2));
+// from index 0 in array jump d amount & start push values to new arr until you reach the end
+// once you reach the end of the array start pushing from idx 0 from the array to the new arr until you reach 
+// the point you started pushing from intially..the d jump amount
+
+
+
