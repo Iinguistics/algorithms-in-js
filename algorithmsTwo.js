@@ -1297,7 +1297,9 @@ function hourglassSum(arr){
 //console.log(hourglassSum([[1,1,1,0,0,0], [0,1,0,0,0,0], [1,1,1,0,0,0], [0,0,2,4,4,0], [0,0,0,2,0,0], [0,0,1,2,4,0]]));
 
 
-
+// from index 0 in array jump d amount & start push values to new arr until you reach the end
+// once you reach the end of the array start pushing from idx 0 from the array to the new arr until you reach 
+// the point you started pushing from intially..the d jump amount
 function rotLeft(a, d){
     const output = [];
     for(let i = d; i < a.length; i++){
@@ -1311,9 +1313,7 @@ function rotLeft(a, d){
     return output;
 }
 //console.log(rotLeft([1,2,3,4,5], 2));
-// from index 0 in array jump d amount & start push values to new arr until you reach the end
-// once you reach the end of the array start pushing from idx 0 from the array to the new arr until you reach 
-// the point you started pushing from intially..the d jump amount
+
 
 
 
@@ -1372,3 +1372,6 @@ function rotLeft(a, d){
     return swapCount;
  }
 //console.log(minimumSwaps([4,3,1,2]))
+
+
+
