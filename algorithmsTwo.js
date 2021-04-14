@@ -1305,7 +1305,7 @@ function rotLeft(a, d){
     }
      let i = 0;
      while(i < d){
-         output.push(a[i] );
+         output.push(a[i]);
          i ++;
      }
     return output;
@@ -1317,3 +1317,58 @@ function rotLeft(a, d){
 
 
 
+
+// function minimumSwaps(arr){
+//     let min;
+//     let minIdx;
+//     let swaps = 0;
+//     for(let i = 0; i < arr.length - 1; i++){
+//         min = arr[i]
+//         let j = i + 1;
+//         while(j < arr.length ){
+//             if(arr[j] < min){
+//                 min = arr[j];
+//                 minIdx = j;
+//                 j ++;
+//             }else{
+//                 console.log("min: " + min, arr[j])
+//                 j ++;
+//             }
+//         }
+//         if(arr[i] > min){
+//             helpSwap(i, minIdx, arr)
+//         }
+//     }
+
+//     function helpSwap(i, j, arr){
+//         const temp = arr[j];
+//         arr[j] = arr[i];
+//         arr[i] = temp;
+//         swaps ++;
+//     }
+//     return swaps;
+// }
+
+
+
+ function minimumSwaps(arr){
+    let swapCount = 0;
+    for(let index = 0; index < arr.length; index++){
+        const currentInt = arr[index];
+        const position = index + 1;
+        if (currentInt !== position) {
+            let indexToSwap
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] === position){
+                    indexToSwap = i;
+                    break
+                }
+            }
+            arr[indexToSwap] = currentInt;
+            arr[index] = position;
+            swapCount = swapCount + 1;
+        }
+    }
+    return swapCount;
+ }
+//console.log(minimumSwaps([4,3,1,2]))
