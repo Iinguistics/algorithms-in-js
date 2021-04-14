@@ -1375,3 +1375,55 @@ function rotLeft(a, d){
 
 
 
+function checkMagazine(magazine, note){
+    let magDict = {};
+    let works = '';
+
+    //Populate magDict with words from the magWordArr
+    for (let i = 0; i < magazine.length; i++){
+        let word = magazine[i];
+        magDict[word] = magDict[word] ? magDict[word] + 1 : 1; 
+    }
+
+    //Loop through the note and compare with magazine object
+    for (let i = 0; i < note.length; i++){
+        //magDict has the word needed for the note
+        if (!(note[i] in magDict)) {
+            works = 'No';
+            break;
+        } else {
+            //In the magDict
+            if (magDict[note[i]] < 1) {
+                works = 'No'
+                break;
+            }
+            //Subtract one from the number of words in dict
+            magDict[note[i]] = magDict[note[i]] - 1;
+        }
+    }
+    if(works === '') works = 'Yes';
+    console.log(works);
+}
+//console.log(checkMagazine("give me one grand today night", "give one grand today"));
+
+
+
+function twoStrings(s1, s2){
+    const stringDict = {};
+    let result = "";
+    for(let letter of s1){
+        if(letter !== " ")  stringDict[letter] = true;
+    }
+    for(let letter of s2){
+        if(letter in stringDict){
+            result = "YES";
+            break;
+        }
+    }
+    if(result === "") result = "NO";
+    return result;
+}
+//console.log(twoStrings("hi", "world"));
+
+
+
