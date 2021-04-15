@@ -1471,3 +1471,39 @@ function alternatingCharacters(s){
 //console.log(alternatingCharacters("aabaab"));
 
 
+// .sort() under the hood uses Insertion sort for arrays with less than 10 values, greater than 10, the quick sort method is used
+// quick sort does not sort in place time is O(n log(n)) space O(log(n)) ...insertion sort uses nested for loop time O(n^2) space o(1) it sorts the array in place
+// sort & three pointer approach...could also do a non sort nested for loop..j = i + 1 if it reaches the end & does not match i return a[i] else i ++
+function lonelyinteger(a){
+    a.sort((a,b)=> a - b);
+
+    if(a.length === 1) return a[0];
+    for(let i = 1; i < a.length -1; i++){
+        if(a[i] !== a[i - 1] && a[i] !== a[i + 1]){
+            console.log('mid')
+            console.log(a);
+            return a[i];
+        }else if(i - 1 === 0 && a[i - 1] !== a[i]){
+            console.log('start')
+            return a[i - 1];
+        }else if(i + 1 === a.length - 1 && a[i + 1] !== a[i]){
+            console.log('end')
+            return a[i + 1];
+        }
+    }
+}
+//console.log(lonelyinteger([34, 95, 34, 64, 45, 95, 16, 80, 80, 75, 3, 25, 75, 25, 31, 3, 64, 16, 31]));
+
+// x or approach...if values appear multiple times res would be 0 if only once res will be the odd number of times which in the case would be one
+// function lonelyinteger(a){
+//     let res = 0;
+//     for(num of a){
+//         res = res ^ num;
+//     }
+//     return res;
+// }
+//console.log(lonelyinteger([34, 95, 34, 64, 45, 95, 16, 80, 80, 75, 3, 25, 75, 25, 31, 3, 64, 16, 31]));
+
+
+
+
