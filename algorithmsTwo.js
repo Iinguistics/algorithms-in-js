@@ -1427,3 +1427,47 @@ function twoStrings(s1, s2){
 
 
 
+function makeAnagram(a, b){
+     const lettersDict = {};
+     const larger = a.length >= b.length ? a : b;
+     const smaller = a.length < b.length ? a : b;
+
+     // store letters counts for larger string
+     for(const letter of larger){
+         lettersDict[letter] = (lettersDict[letter] || 0) + 1;
+     }
+
+     // count same letters
+     let counter = 0;
+
+     // loop through second/smaller array string to find count of same letters
+     for(const letter of smaller){
+         if(lettersDict[letter] && lettersDict[letter] > 0){
+          lettersDict[letter] --;
+          counter ++;
+         }
+     }
+
+     const diffOfSmaller = (smaller.length - counter);
+     const diffOfLarger = (larger.length - smaller.length);
+
+     return (2 * diffOfSmaller) + diffOfLarger;
+   
+}
+//console.log(makeAnagram("cde", "cdf"));
+
+
+
+function alternatingCharacters(s){
+    let deletions = 0;
+    for(let i = 0; i < s.length - 2; i++){
+        if(s[i] === s[i + 1]){
+            deletions ++;
+        }
+    }
+    if(s[s.length - 2] === s[s.length - 1]) deletions ++;
+    return deletions;
+}
+//console.log(alternatingCharacters("aabaab"));
+
+
