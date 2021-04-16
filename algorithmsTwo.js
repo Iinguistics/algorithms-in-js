@@ -1506,4 +1506,28 @@ function lonelyinteger(a){
 
 
 
+// O(n) Time   O(n) space
+function runLengthEncoding(string){
+
+    const output = [];
+    let counter = 1;
+    for(let i = 1; i<string.length; i++){
+        if(string[i] !== string[i - 1] || counter === 9){
+            output.push(counter.toString());
+            output.push(string[i - 1]);
+            counter = 0;
+        }
+        counter ++;
+      }
+
+        output.push(counter.toString());
+        output.push(string[string.length - 1]);
+
+       return output.join('');
+                       
+  }
+//console.log(runLengthEncoding("1a1a"));
+
+
+
 
