@@ -1533,7 +1533,6 @@ function runLengthEncoding(string){
 function countSwaps(a){
     let numberOfSwaps = 0;
 
-
     for(let i = 0; i < a.length; i++){
         for(let j = 0; j < a.length -1; j++){
 
@@ -1552,7 +1551,6 @@ function countSwaps(a){
         }
 
 
-    
     const firstElement = a[0];
     const lastElement = a[a.length - 1];
 
@@ -1581,3 +1579,41 @@ function minimumAbsoluteDifference(arr){
     return minAbsDiff;
 }
 //console.log(minimumAbsoluteDifference([-59,-36,-13,-1,-53,-92,-2,-96,-54,75]));
+
+
+
+function minimumBribes(q){
+    const TOO_CHAOTIC = "Too chaotic";
+    let total = 0;
+
+    for(let current_pos = 0; current_pos < q.length; current_pos++){
+        // getting original position using 0 indexing (starts at 0)
+        const origianl_pos = q[current_pos] - 1;
+
+        // diff = how far person has moved
+        const diff = origianl_pos - current_pos;
+
+        // if person has moved more than two spot return
+        if(diff > 2){
+            return console.log(TOO_CHAOTIC);
+        }
+
+        if(diff <= 0){
+            // check each person starting from one person ahead of original position up until current position
+            for(let i = Math.max(0, origianl_pos - 1); i < current_pos; i++){
+                const start_pos_of_forward_person = q[i] - 1;
+
+                // if person in front of current person started behind current person
+                // then current person must have been bribed by them.
+                if(start_pos_of_forward_person > origianl_pos){
+                    total ++;
+                }
+            }
+        }
+    }
+    console.log(total);
+}
+//console.log(minimumBribes([2,1,5,3,4]));
+
+
+
