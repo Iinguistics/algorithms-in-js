@@ -1561,4 +1561,17 @@ function countSwaps(a){
     console.log(`Last Element: ${lastElement}`);
 
 }
-console.log(countSwaps([6,4,1]));
+//console.log(countSwaps([6,4,1]));
+
+
+
+function minimumAbsoluteDifference(arr){
+     function diff(a,b){
+         return Math.abs( a - b);
+    }
+   const what = diff(arr[0], arr[1])
+  return what
+
+
+}
+console.log(minimumAbsoluteDifference([-59,-36,-13,-1,-53,-92,-2,-96,-54,75]));
