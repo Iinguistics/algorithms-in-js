@@ -1636,3 +1636,36 @@ function compareTriplets(a, b){
 
 
 
+function classPhotos(redShirtHeights, blueShirtHeights){
+    function sort(arr){
+        arr.sort((a,b)=>{
+            return a - b;
+        });
+    }
+
+    sort(redShirtHeights);
+    sort(blueShirtHeights);
+   
+    let redTallerCounter = 0;
+    let blueTallerCounter = 0;
+    const length = redShirtHeights.length;
+
+    for(let i = 0; i < redShirtHeights.length; i++){
+        if(redShirtHeights[i] > blueShirtHeights[i]){
+            redTallerCounter ++;
+        }else if(redShirtHeights[i] < blueShirtHeights[i]){
+            blueTallerCounter ++;
+    }
+  }
+
+    if(redTallerCounter === length || blueTallerCounter === length){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+//console.log(classPhotos([5,8,1,3,4], [6,9,2,4,5]));
+
+
+
