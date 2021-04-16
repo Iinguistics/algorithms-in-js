@@ -1617,3 +1617,22 @@ function minimumBribes(q){
 
 
 
+function compareTriplets(a, b){
+    const output = [];
+    let aResults = 0;
+    let bResults = 0;
+    for(let i = 0; i < a.length; i++){
+        if(a[i] > b[i]){
+          aResults ++;
+        }else if(b[i] > a[i]){
+            bResults ++;
+        }
+    }
+     output.push(aResults, bResults);
+   
+     return output;
+}
+//console.log(compareTriplets([10,12,50], [20,20,10]));
+
+
+
