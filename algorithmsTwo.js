@@ -1530,4 +1530,35 @@ function runLengthEncoding(string){
 
 
 
+function countSwaps(a){
+    let numberOfSwaps = 0;
 
+
+    for(let i = 0; i < a.length; i++){
+        for(let j = 0; j < a.length -1; j++){
+
+        if(a[j] > a[j + 1]){
+            swap(j, j + 1, a);
+            numberOfSwaps ++;
+        }
+     }
+  }
+
+        function swap(i,j,a){
+            let temp;
+            temp = a[j];
+            a[j] = a[i];
+            a[i] = temp;
+        }
+
+
+    
+    const firstElement = a[0];
+    const lastElement = a[a.length - 1];
+
+    console.log(`Array is sorted in ${numberOfSwaps} swaps.`);
+    console.log(`First Element: ${firstElement}`);
+    console.log(`Last Element: ${lastElement}`);
+
+}
+console.log(countSwaps([6,4,1]));
