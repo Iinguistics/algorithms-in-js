@@ -1566,12 +1566,18 @@ function countSwaps(a){
 
 
 function minimumAbsoluteDifference(arr){
+     arr.sort((a,b)=> a - b);
      function diff(a,b){
          return Math.abs( a - b);
     }
-   const what = diff(arr[0], arr[1])
-  return what
+    let minAbsDiff = Infinity;
+    for(let i = 1; i < arr.length; i++){
+        const runningDiff = diff(arr[i], arr[i - 1]);
+        if(minAbsDiff > runningDiff){
+            minAbsDiff = runningDiff;
+        }
+      }
 
-
+    return minAbsDiff;
 }
-console.log(minimumAbsoluteDifference([-59,-36,-13,-1,-53,-92,-2,-96,-54,75]));
+//console.log(minimumAbsoluteDifference([-59,-36,-13,-1,-53,-92,-2,-96,-54,75]));
