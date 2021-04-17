@@ -1669,3 +1669,13 @@ function classPhotos(redShirtHeights, blueShirtHeights){
 
 
 
+function aVeryBigSum(arr){
+   const output = arr.reduce((a,b)=>{
+        return a + b;
+    });
+    return output;
+}
+//console.log(aVeryBigSum([55,999,56556,23552]));
+
+
+
