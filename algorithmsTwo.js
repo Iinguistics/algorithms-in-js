@@ -1696,3 +1696,24 @@ function arraySign(nums){
 
 }
 //console.log(arraySign([1,5,5,4]));
+
+
+
+function checkIfPangram(sentence){
+    const pangram = "thequickbrownfoxjumpsoverthelazydog";
+    const sentenceDict = {};
+
+    if(sentence.length < 26){
+        return false;
+    }
+    for(let i = 0; i < sentence.length; i++){
+        sentenceDict[sentence[i]] = true;
+        } 
+        for(letter of pangram){
+            if(!(sentenceDict[letter])){
+                return false;
+            }
+        }
+    return true;
+}
+//console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydog"));
