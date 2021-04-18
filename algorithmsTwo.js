@@ -1717,3 +1717,21 @@ function checkIfPangram(sentence){
     return true;
 }
 //console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydog"));
+
+
+
+function whatFlavors(cost, money){
+    const prices = {};
+
+    for(let i = 0; i < cost.length; i++){
+        const potentialMatch = money - cost[i];
+        if(potentialMatch in prices){
+            console.log(prices[potentialMatch], i + 1);
+        }else{
+            prices[cost[i]] = i + 1;
+        }
+    }
+}
+//console.log(whatFlavors([2,1,3,5,6], 5));
+
+
