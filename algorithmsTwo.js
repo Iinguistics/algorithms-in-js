@@ -1679,3 +1679,20 @@ function aVeryBigSum(arr){
 
 
 
+function arraySign(nums){
+    const multipliedSum = nums.reduce((a,b)=> a * b);
+    
+    if(multipliedSum < 0){
+        return -1;
+    }
+
+    if(multipliedSum > 0){
+        return 1;
+    }
+
+    if(multipliedSum === 0){
+        return 0;
+    }
+
+}
+//console.log(arraySign([1,5,5,4]));
