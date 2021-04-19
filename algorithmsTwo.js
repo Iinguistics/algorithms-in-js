@@ -1735,3 +1735,43 @@ function whatFlavors(cost, money){
 //console.log(whatFlavors([2,1,3,5,6], 5));
 
 
+// this fails algoexpert? can you not use 1,5 twice as pairs?
+function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest){
+    redShirtSpeeds.sort((a,b) => a - b);
+    blueShirtSpeeds.sort((a,b) => a - b);
+
+    const tandemSpeeds = [];
+
+    for(let i = 0; i < redShirtSpeeds.length; i++){
+        let j = redShirtSpeeds.length - 1 - i;
+        if(fastest){
+            tandemSpeeds.push(Math.max(redShirtSpeeds[i], blueShirtSpeeds[j]));
+        }else{
+            tandemSpeeds.push(Math.min(redShirtSpeeds[i], blueShirtSpeeds[j]));
+        }
+    }
+
+    const reducer = (a,b) => a + b;
+
+    const speed = tandemSpeeds.reduce(reducer);
+
+    console.log(tandemSpeeds)
+
+    return speed;
+}
+//console.log(tandemBicycle([1,2,3,4,5], [1,2,3,4,5], false));
+
+
+
+function staircase(n){
+
+    for (let i = 1; i <= n; i++) {
+          console.log(" ".repeat(n-i) + "#".repeat(i))
+      }  
+
+}
+//console.log(staircase(4))
+
+
+
+
