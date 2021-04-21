@@ -1764,14 +1764,23 @@ function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest){
 
 
 function staircase(n){
-
     for (let i = 1; i <= n; i++) {
           console.log(" ".repeat(n-i) + "#".repeat(i))
       }  
-
 }
 //console.log(staircase(4))
 
+
+
+
+function miniMaxSum(arr){
+    arr.sort((a,b)=>{
+        return a - b;
+    })
+    const min = arr[0] + arr[1] + arr[2] + arr[3];
+    const max = arr[1] + arr[2] + arr[3] + arr[4];
+    console.log(min, max);
+}
 
 
 
