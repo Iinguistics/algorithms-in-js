@@ -1784,3 +1784,24 @@ function miniMaxSum(arr){
 
 
 
+function birthdayCakeCandles(candles){
+    candles.sort((a,b)=>{
+        return b - a;
+    });
+
+    let tallest = candles[0];
+    let counter = 1;
+
+    for(let i = 1; i < candles.length; i++){
+        if(candles[i] === tallest){
+            counter ++;
+        }else{
+            break;
+        }
+      }
+      return counter;
+    
+}
+//console.log(birthdayCakeCandles([18, 90, 90, 13, 90, 75, 90, 8, 90, 43]));
+
+
