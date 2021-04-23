@@ -1826,3 +1826,22 @@ function maximumToys(prices, k){
 
 
 
+function arrayStringsAreEqual(word1, word2){
+   const string1 = word1.join("");
+   const string2 = word2.join("");
+
+   if(string2.length !== string1.length){
+       return false
+   }
+
+    for(let i = 0; i<string1.length; i++){
+        if(string1[i] !== string2[i]){
+            return false
+        }
+    }
+        return true;
+}
+//console.log(arrayStringsAreEqual(['a','cb'], ['ab', 'c']));
+
+
+
