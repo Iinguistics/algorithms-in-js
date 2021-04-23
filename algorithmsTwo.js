@@ -1805,3 +1805,24 @@ function birthdayCakeCandles(candles){
 //console.log(birthdayCakeCandles([18, 90, 90, 13, 90, 75, 90, 8, 90, 43]));
 
 
+
+function maximumToys(prices, k){
+
+    prices.sort((a,b)=>{
+        return a - b;
+    });
+
+    let count = 0;
+    let output = 0;
+       for(let i = 0; i<prices.length; i++){
+           if(count <= k){
+            count += prices[i];
+            output ++;
+           }
+       }
+       return output - 1;
+}
+//console.log(maximumToys([1,2,3,4], 7));
+
+
+
