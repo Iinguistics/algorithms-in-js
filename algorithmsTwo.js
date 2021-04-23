@@ -1834,7 +1834,7 @@ function arrayStringsAreEqual(word1, word2){
        return false
    }
 
-    for(let i = 0; i<string1.length; i++){
+    for(let i = 0; i < string1.length; i++){
         if(string1[i] !== string2[i]){
             return false
         }
@@ -1845,3 +1845,23 @@ function arrayStringsAreEqual(word1, word2){
 
 
 
+//Given an integer n and an integer start.
+//Define an array nums where nums[i] = start + 2*i (0-indexed) and n == nums.length.
+//Return the bitwise XOR of all elements of nums.
+
+function xorOperation(n, start){
+    let numsArray = [];
+    let result;
+
+    for(let i = 0; i < n; i++){
+        numsArray.push(start + 2 * i)
+    }
+
+
+    for(let i = 0; i < numsArray.length; i++){
+        result ^= numsArray[i];
+    }
+
+    return result;
+}
+//console.log(xorOperation(10, 5));
