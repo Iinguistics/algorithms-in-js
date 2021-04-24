@@ -1857,7 +1857,6 @@ function xorOperation(n, start){
         numsArray.push(start + 2 * i)
     }
 
-
     for(let i = 0; i < numsArray.length; i++){
         result ^= numsArray[i];
     }
@@ -1865,3 +1864,38 @@ function xorOperation(n, start){
     return result;
 }
 //console.log(xorOperation(10, 5));
+
+
+
+// step one flip / reverse it
+// step two invert it / each 0 is replaced by 1 & 1 is replaced by 0
+function flipAndInvertImage(image){
+        
+    for(let i = 0; i < image.length; i++){
+        let left = 0;
+        let right = image[i].length - 1;
+        while(left < right){
+            let temp = image[i][right];
+            image[i][right] = image[i][left];
+            image[i][left] = temp;
+            left ++;
+            right --;
+        }
+    }
+
+    for(let i = 0; i < image.length; i++){
+        for(let j = 0; j < image.length; j++){
+            if(image[i][j] === 1){
+                image[i][j] = 0;
+            }else{
+                image[i][j] = 1;
+            }
+        }
+    }
+
+    return image;
+}
+//console.log(flipAndInvertImage([ [1,1,0], [1,0,1], [0,0,0] ]));
+
+
+
