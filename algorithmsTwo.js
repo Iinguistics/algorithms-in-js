@@ -266,13 +266,23 @@ function nthTest(n){
     lastTwo[1] = nFib;
     counter ++;
   }
-  if(n < 2){
-      return lastTwo[0];
-  }else{
-      return lastTwo[1];
-  }
+  
+  return n > 1 ? lastTwo[1] : lastTwo[0];
   
 }
+
+// better solution ?
+// function nthTest(n){
+//     let a = 0, b = 1
+    
+//     while(n--) {
+//         [a,b] = [b, a + b]
+//     }
+//     return a
+    
+//   }
+
+
 //console.log(nthTest(10));
 
 // this solution works as well
@@ -1896,6 +1906,27 @@ function flipAndInvertImage(image){
     return image;
 }
 //console.log(flipAndInvertImage([ [1,1,0], [1,0,1], [0,0,0] ]));
+
+
+
+
+function countStudents(students, sandwiches){
+
+    let tooPicky = 0
+    while (tooPicky !== students.length){
+        if (students[0] === sandwiches[0]){   //If student eats sandwich
+            students.shift();                //first student gone
+            sandwiches.shift();              //first sandwich gone
+            tooPicky = 0;                    //reset refusals count
+        } else {
+            students.push(students[0]);      //first student to back of line
+            students.shift();                //first student gone from front of line
+            tooPicky++;                      //increment refusals count; if all students in the lineup refuse, the while loop stops
+        }
+    }
+    return students.length;
+}
+//console.log(countStudents([1,1,1,0,0,1], [1,0,0,0,1,1]));
 
 
 
