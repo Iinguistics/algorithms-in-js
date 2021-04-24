@@ -1914,7 +1914,7 @@ function countStudents(students, sandwiches){
 
     let tooPicky = 0
     while (tooPicky !== students.length){
-        if (students[0] === sandwiches[0]){   //If student eats sandwich
+        if (students[0] === sandwiches[0]){  //If student eats sandwich
             students.shift();                //first student gone
             sandwiches.shift();              //first sandwich gone
             tooPicky = 0;                    //reset refusals count
@@ -1927,6 +1927,23 @@ function countStudents(students, sandwiches){
     return students.length;
 }
 //console.log(countStudents([1,1,1,0,0,1], [1,0,0,0,1,1]));
+
+
+
+function sumOddLengthSubarrays(arr){
+    let i=1;
+    let sum=0;
+    while(i<=arr.length){
+        for(let j=0;j<=arr.length-i;j++){
+             for(let k=j;k<i+j;k++){
+                sum+=arr[k]
+             }
+        }
+        i+=2
+    }
+    return sum
+}
+//console.log(sumOddLengthSubarrays([1,4,2,5,3]));
 
 
 
