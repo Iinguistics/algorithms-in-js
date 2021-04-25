@@ -1947,3 +1947,32 @@ function sumOddLengthSubarrays(arr){
 
 
 
+function firstNoneRepeatingCharacter(string){
+
+    const letters = {};
+
+    for(let i = 0; i < string.length; i++){
+        if(string[i] in letters){
+            letters[string[i]] +=1;
+        }else{
+            letters[string[i]] = 1;
+        }
+    }
+   
+    if(string.length === 1){
+        return 0;
+    }
+
+    for(let i = 0; i < string.length; i++){
+        if(letters[string[i]] === 1){
+            return i;
+        }
+    }
+
+    return -1;
+
+}
+//console.log(firstNoneRepeatingCharacter("ab"));
+
+
+
