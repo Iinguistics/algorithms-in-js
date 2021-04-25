@@ -1976,3 +1976,31 @@ function firstNoneRepeatingCharacter(string){
 
 
 
+function maxNumberOfBalloons(text){
+   
+  let map = new Map();
+  for (let i = 0; i < text.length; i++) {
+    map.set(text[i], map.get(text[i]) + 1 || 1);
+  }
+
+  if (
+    map.has("b") &&
+    map.has("a") &&
+    map.has("l") &&
+    map.has("o") &&
+    map.has("n")
+  ) {
+    return Math.min(
+      map.get("b"),
+      map.get("a"),
+      Math.floor(map.get("l") / 2),
+      Math.floor(map.get("o") / 2),
+      map.get("n")
+    );
+  }
+  return 0;
+}
+//console.log(maxNumberOfBalloons('balloon'));
+
+
+
