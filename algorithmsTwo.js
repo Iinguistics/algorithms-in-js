@@ -2100,3 +2100,23 @@ function binarySearch(array, target){
 
 
 
+function minOperations(nums){
+    let output = 0;
+
+    if(nums.length === 1){
+        return output;
+    }
+
+    for(let i = 0; i<nums.length -1; i++){
+        if(nums[i] >= nums[i + 1]){
+            let diff = nums[i] - nums[i + 1] + 1;
+            nums[i + 1] = nums[i + 1] + diff;
+            output += diff;
+        }
+    }
+    return output;
+}
+//console.log(minOperations([1,5,2,4,1]));
+
+
+
