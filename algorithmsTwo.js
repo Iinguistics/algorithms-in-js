@@ -2120,3 +2120,24 @@ function minOperations(nums){
 
 
 
+function countTriplets(arr, ratio){
+    let totalCount = 0;
+    const possibilites = {};
+    const combos = {};
+
+    arr.forEach((number)=>{
+        totalCount += (combos[number] || 0);
+        const nextNumber = number * ratio;
+
+        combos[nextNumber] = (
+            (combos[nextNumber] || 0)
+         +  (possibilites[number] || 0)
+        );
+
+        possibilites[nextNumber] = (possibilites[nextNumber] || 0) + 1;
+    });
+
+        return totalCount;
+
+}
+console.log([1,4,16,64], 4);
