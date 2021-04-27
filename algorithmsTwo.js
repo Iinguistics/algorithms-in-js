@@ -2140,4 +2140,7 @@ function countTriplets(arr, ratio){
         return totalCount;
 
 }
-console.log([1,4,16,64], 4);
+//console.log([1,4,16,64], 4);
+
+
+
