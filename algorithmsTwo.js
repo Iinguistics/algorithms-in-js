@@ -2144,3 +2144,40 @@ function countTriplets(arr, ratio){
 
 
 
+function maxIceCream(costs, coins){
+    costs.sort((a,b)=>{
+       return a - b;
+    });
+
+    let runningSum = 0;
+    let output = 0;
+
+    for(let i = 0; i<costs.length; i++){
+        if(runningSum + costs[i] > coins){
+            return output;
+        }else{
+            runningSum += costs[i];
+            output ++;
+        }
+    } 
+    return output;
+}
+//console.log(maxIceCream([1,6,3,1,2,5],20));
+
+// another approach
+function maxIceCream(costs, coins){
+
+  let numberOfIcecreams = 0
+  let sortedCosts = costs.sort((a,b) => a - b)
+  let boyMoney = coins;
+  
+  while(boyMoney - sortedCosts[numberOfIcecreams] >= 0){
+    boyMoney -= sortedCosts[numberOfIcecreams]
+    numberOfIcecreams++
+  }
+  
+  return numberOfIcecreams
+}
+
+
+
