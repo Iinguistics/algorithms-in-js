@@ -2182,3 +2182,7 @@ function maxIceCream(costs, coins){
 
 
 
+function decrypt(code, k){
+
+}
+console.log(decrypt([5,7,1,4], 3))
