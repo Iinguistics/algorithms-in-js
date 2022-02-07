@@ -1927,7 +1927,6 @@ function sherlockAndAnagrams(s) {
 				return false;
 			}
 		}
-
 		return true;
 	}
 
@@ -1965,7 +1964,6 @@ function binarySearch(array, target) {
 			right = mid - 1;
 		}
 	}
-
 	return -1;
 }
 //console.log(binarySearch([0,1,21,33,45,45,61,71,72,73], 33));
@@ -2083,3 +2081,17 @@ function getConcatenation(nums) {
 }
 
 //console.log(getConcatenation([1, 2, 1]));
+
+function findMajority(arr) {
+	//let test = numbers[0].split(' ');
+	const threshold = Math.floor(arr.length / 2);
+	const map = {};
+	for (let i = 0; i < arr.length; i++) {
+		const value = arr[i];
+		map[value] = map[value] + 1 || 1;
+		if (map[value] > threshold) return value;
+	}
+	return -1;
+}
+
+console.log(findMajority([8, 8, 2, 4, 8, 4, 4, 4, 4]));
